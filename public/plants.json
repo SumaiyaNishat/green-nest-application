@@ -1,0 +1,74 @@
+[
+  {
+    "plantId": 1,
+    "plantName": "Snake Plant",
+    "category": "Air Purifier",
+    "price": 18,
+    "rating": 4.8,
+    "availableStock": 10,
+    "careLevel": "Easy",
+    "description": "A hardy plant that purifies indoor air and thrives in low light. Perfect for beginners and busy plant lovers.",
+    "image": "https://i.postimg.cc/dtqRTqLH/snake-plant.png",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 2,
+    "plantName": "Peace Lily",
+    "category": "Flowering Plant",
+    "price": 25,
+    "rating": 4.7,
+    "availableStock": 8,
+    "careLevel": "Moderate",
+    "description": "Elegant white blooms and lush leaves make the Peace Lily a favorite for adding a calming touch to your space.",
+    "image": "https://i.postimg.cc/YS8dd7wL/peace-lily.png",
+    "providerName": "Leaf & Bloom"
+  },
+  {
+    "plantId": 3,
+    "plantName": "Aloe Vera",
+    "category": "Succulent",
+    "price": 15,
+    "rating": 4.9,
+    "availableStock": 12,
+    "careLevel": "Easy",
+    "description": "Known for its healing properties, Aloe Vera is both decorative and practical. Requires minimal care and bright light.",
+    "image": "https://i.postimg.cc/6qFx3zDn/aloe-vera.png",
+    "providerName": "Nature's Corner"
+  },
+  {
+    "plantId": 4,
+    "plantName": "Spider Plant",
+    "category": "Air Purifier",
+    "price": 14,
+    "rating": 4.6,
+    "availableStock": 15,
+    "careLevel": "Easy",
+    "description": "A classic indoor plant that’s great for removing toxins from the air. Its striped leaves grow beautifully in hanging pots.",
+    "image": "https://i.postimg.cc/43jQJ2pB/spider-plant.png",
+    "providerName": "GreenLeaf Garden"
+  },
+  {
+    "plantId": 5,
+    "plantName": "ZZ Plant",
+    "category": "Low Light",
+    "price": 22,
+    "rating": 4.8,
+    "availableStock": 9,
+    "careLevel": "Very Easy",
+    "description": "The ZZ Plant is nearly indestructible and perfect for low-light corners. Glossy leaves make it a stylish decor addition.",
+    "image": "https://i.postimg.cc/V6sPZwtn/zz-plant.png",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 6,
+    "plantName": "Areca Palm",
+    "category": "Decorative",
+    "price": 30,
+    "rating": 4.9,
+    "availableStock": 6,
+    "careLevel": "Moderate",
+    "description": "A tropical beauty with feathery leaves that bring a vacation vibe indoors. Great natural humidifier for dry rooms.",
+    "image": "https://i.postimg.cc/HsYt9tgc/areca-palm.png",
+    "providerName": "Leaf & Bloom"
+  }
+]
