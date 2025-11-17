@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Aisha Rahman",
+    "role": "Indoor Plant Specialist",
+    "image": "https://i.ibb.co/nQ5xk7h/portrait1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "David Miller",
+    "role": "Soil & Fertilizer Expert",
+    "image": "https://i.ibb.co/0mrzcVc/portrait2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Kevin Smith",
+    "role": "Houseplant Disease Specialist",
+    "image": "https://i.ibb.co/Pw5VQyL/portrait4.jpg"
+  }
+]
