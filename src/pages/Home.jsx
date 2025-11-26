@@ -4,6 +4,7 @@ import Hero from "../components/Hero/Hero";
 import { FaStar } from "react-icons/fa";
 import EcoDecor from "../components/EcoDecor/EcoDecor";
 import PlantCare from "../components/PlantCare/PlantCare";
+import PlantOfWeek from "../components/PlantOfWeek/PlantOfWeek";
 
 const Home = () => {
   const [plants, setPlants] = useState([]);
@@ -100,6 +101,7 @@ const Home = () => {
       </section>
 
       <EcoDecor></EcoDecor>
+      <PlantOfWeek></PlantOfWeek>
     </div>
   );
 };

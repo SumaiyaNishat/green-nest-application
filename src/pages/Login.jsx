@@ -1,5 +1,5 @@
 import React, { useContext, useRef, useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { Leaf } from "lucide-react";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
@@ -11,11 +11,16 @@ const Login = () => {
   const {
     signInWithEmailAndPasswordFunc,
     signInWithEmailFunc,
-    signoutUserFunc,
     sendPasswordResetEmailFunc,
-    user,
     setUser,
+    user,
+    setLoading,
   } = useContext(AuthContext);
+  const location = useLocation();
+  const from = location.state?.from || "/";
+  const navigate = useNavigate();
+
+  console.log(location);
 
   const emailRef = useRef(null);
 
@@ -27,8 +32,10 @@ const Login = () => {
     signInWithEmailAndPasswordFunc(email, password)
       .then((res) => {
         console.log(res);
+        setLoading(false);
         setUser(res.user);
         toast.success("Login successfully");
+        navigate(from);
       })
       .catch((e) => {
         console.log(e);
@@ -40,8 +47,10 @@ const Login = () => {
     signInWithEmailFunc()
       .then((res) => {
         console.log(res);
+        setLoading(false);
         setUser(res.user);
         toast.success("Login successfully");
+        navigate(from);
       })
       .catch((e) => {
         console.log(e);
@@ -53,6 +62,7 @@ const Login = () => {
     console.log();
     const email = emailRef.current.value;
     sendPasswordResetEmailFunc(email).then((res) => {
+      setLoading(false);
       toast.success("check your email to reset password");
     });
   };
