@@ -23,11 +23,13 @@ const Home = () => {
       .then((data) => setExperts(data));
   }, []);
 
-
   return (
     <div className="bg-green-50">
-      <section className="pb-2 w-11/12 mx-auto">
+      {/* hero */}
+      <section className="pb-2">
         <Hero></Hero>
+
+        {/* Top Plants */}
       </section>
       <section className="py-12 bg-green-100">
         <div className="text-center">
@@ -71,7 +73,7 @@ const Home = () => {
         </div>
       </section>
 
-      < PlantCare></PlantCare>
+      <PlantCare></PlantCare>
 
       {/* experts section */}
       <section className="py-12 bg-white">
