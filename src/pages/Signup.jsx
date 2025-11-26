@@ -1,15 +1,16 @@
+import React, { useContext, useState } from "react";
+import { Link } from "react-router";
+import { auth } from "../firebase/firebase.config";
+import { toast } from "react-toastify";
+import { FaEye } from "react-icons/fa";
+import { IoEyeOff } from "react-icons/io5";
+import { AuthContext } from "../context/AuthContext";
 import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
   updateProfile,
 } from "firebase/auth";
-import React, { useState } from "react";
-import { Link } from "react-router";
-import { auth } from "../firebase/firebase.config";
-import { toast } from "react-toastify";
-import { FaEye } from "react-icons/fa";
-import { IoEyeOff } from "react-icons/io5";
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -17,15 +18,22 @@ const Signup = () => {
   const [user, setUser] = useState(null);
   const [passwordError, setPasswordError] = useState("");
   const [passwordShow, passwordSetShow] = useState(false);
+  const { createUserWithEmailAndPasswordFunc, updateProfileFunc } =
+    useContext(AuthContext);
 
   const handleSignup = (e) => {
     e.preventDefault();
-    const name = e.target.name?.value;
+    const displayName = e.target.name?.value;
     const photoURL = e.target.photoURL?.value;
     const email = e.target.email?.value;
     const password = e.target.password?.value;
 
-    console.log("signup function entered", { name, photoURL, email, password });
+    console.log("signup function entered", {
+      displayName,
+      photoURL,
+      email,
+      password,
+    });
 
     if (!/[A-Z]/.test(password)) {
       setPasswordError("Must have an Uppercase letter in the password");
@@ -41,18 +49,14 @@ const Signup = () => {
     }
     setPasswordError("");
 
-    createUserWithEmailAndPassword(auth, email, password)
+    createUserWithEmailAndPasswordFunc(email, password)
       .then((res) => {
-        updateProfile(res.user,{
-          displayName: name,
-          photoURL: photoURL,
-        }).then((res) =>{
-          console.log(res);
-          toast.success("Signup successfully")
-        })
-        .catch((e) => {
-          toast.error(e.message);
-        })
+        updateProfileFunc(displayName, photoURL)
+          .then(() => {
+            setUser(null);
+            console.log(res);
+          })
+          .catch((e) => {});
         console.log(res);
         toast.success("Signup successful");
       })
@@ -76,6 +80,18 @@ const Signup = () => {
 
   return (
     <div className="flex justify-center min-h-screen items-center bg-green-100">
+      <div className="hidden lg:flex w-1/2  items-center justify-center">
+        <div className="max-w-md text-center px-8">
+          <h1 className="text-3xl font-bold text-green-800 mb-3">
+            Create Your Account
+          </h1>
+          <p className="text-green-700 font-semibold">
+            Join our community and unlock exclusive features. your journey
+            begins here!
+          </p>
+        </div>
+      </div>
+
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-5">
         <h2 className="font-semibold text-2xl text-center">
           Register your Account

@@ -86,7 +86,7 @@ const MyProfile = () => {
             onClick={handleUpdate}
             className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 cursor-pointer"
           >
-            Save Changes
+            Update Profile
           </button>
         </div>
       )}
